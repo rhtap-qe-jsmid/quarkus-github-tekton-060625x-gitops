@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: quarkus-github-tekton-060625x-gitops
+  description: This is GitOps manifest for quarkus-github-tekton-060625x   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=quarkus-github-tekton-060625x
+    backstage.io/kubernetes-id: quarkus-github-tekton-060625x 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: quarkus-github-tekton-060625x
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:quarkus-github-tekton-060625x
